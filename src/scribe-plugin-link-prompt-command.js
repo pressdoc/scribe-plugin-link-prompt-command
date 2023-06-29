@@ -24,18 +24,17 @@ define(['./checks',
         var selection = new scribe.api.Selection();
         var range = selection.range;
         var anchorNode = selection.getContaining(function (node) {
-          console.log(node);
           return node.nodeName === this.nodeName;
         }.bind(this));
 
         console.log(anchorNode);
 
-        var initialLink = anchorNode ? anchorNode.href : '';
+        var initialLink = anchorNode ? anchorNode.getAttribute('href') : '';
 
         console.log(initialLink);
 
         if (!passedLink)  {
-          link = window.prompt('Enter a link.', initialLink);
+          link = window.prompt('Please enter a link:', initialLink);
         } else {
           link = passedLink;
         }
