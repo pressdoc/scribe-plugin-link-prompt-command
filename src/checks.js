@@ -3,7 +3,7 @@ define([], function () {
   'use strict';
 
   var urlProtocolRegExp = /^https?\:\/\//;
-  var anchorLinkProtocolRegExp = /(#[A-Za-z0-9-._~:\/?#[\]@!$&'()*+,;=%]*)?/;
+  var anchorLinkProtocolRegExp = /^(#[A-Za-z0-9-._~:\/?#[\]@!$&'()*+,;=%]*)?/;
   var mailtoProtocolRegExp = /^mailto\:/;
   var telProtocolRegExp = /^tel\:/;
 
