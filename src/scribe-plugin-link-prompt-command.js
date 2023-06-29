@@ -35,8 +35,12 @@ define(['./checks',
           link = passedLink;
         }
 
+        console.log(link);
+
         link = transforms.run(options.transforms.pre, link);
 
+        console.log(link);
+        
         if(!checks.emptyLink(link)) {
           window.alert('This link appears empty');
           return;
@@ -63,7 +67,11 @@ define(['./checks',
             link = prompts.process(window, link);
           }
 
+          console.log(link);
+
           link = transforms.run(options.transforms.post, link);
+
+          console.log(link);
 
           scribe.api.SimpleCommand.prototype.execute.call(this, link);
         }
