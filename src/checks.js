@@ -3,10 +3,11 @@ define([], function () {
   'use strict';
 
   var urlProtocolRegExp = /^https?\:\/\//;
+  var anchorLinkProtocolRegExp = /(#[A-Za-z0-9-._~:/?#[\]@!$&'()*+,;=%]*)?/;
   var mailtoProtocolRegExp = /^mailto\:/;
   var telProtocolRegExp = /^tel\:/;
 
-  var knownProtocols = [urlProtocolRegExp, mailtoProtocolRegExp, telProtocolRegExp];
+  var knownProtocols = [urlProtocolRegExp, mailtoProtocolRegExp, telProtocolRegExp, anchorLinkProtocolRegExp];
 
   function emptyLink(string) {
     return /\w/.test(string);
